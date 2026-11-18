@@ -24,6 +24,18 @@
  *   and realistic floral illustrations so no section ever shows a blank background.
  * ============================================================================
  */
+window.BACKGROUND_MUSIC_CONFIG = {
+  title: "Dr. Dre - Still D.R.E. ft. Snoop Dogg",
+  src: "audio/still-dre.m4a",
+  fallbackSources: [
+    "audio/still-dre.mp3",
+    "images/still-dre.mp3",
+    "audio/still-dre-instrumental.m4a",
+    "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/00/b8/01/00b801d0-ca58-5b96-a07c-4933b6784ca6/mzaf_17927713563224179032.plus.aac.p.m4a"
+  ],
+  volume: 0.78
+};
+
 window.PAGE_BACKGROUNDS_CONFIG = {
   splashScreen: {
     elementId: "splash-screen",

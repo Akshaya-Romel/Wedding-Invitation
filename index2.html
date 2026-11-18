@@ -547,8 +547,14 @@
     <!-- GOLDEN WHITE FLASH TRANSITION OVERLAY -->
     <div id="flash-veil" class="fixed inset-0 z-50 bg-gradient-to-b from-[#FFFDF7] via-[#FCEFD2] to-[#F3E2F7] opacity-0"></div>
 
-    <!-- 1. FLOATING AUDIO TOGGLE BUTTON (Bottom Right, z-50) -->
-    <button id="audio-toggle" aria-label="Toggle Wedding Music"
+    <!-- 1. BACKGROUND MUSIC PLAYER (Dr. Dre - Still D.R.E. ft. Snoop Dogg) & FLOATING TOGGLE BUTTON -->
+    <audio id="bg-music-player" loop preload="auto">
+      <source src="audio/still-dre.m4a" type="audio/mp4" />
+      <source src="audio/still-dre.mp3" type="audio/mpeg" />
+      <source src="audio/still-dre-instrumental.m4a" type="audio/mp4" />
+      <source src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/00/b8/01/00b801d0-ca58-5b96-a07c-4933b6784ca6/mzaf_17927713563224179032.plus.aac.p.m4a" type="audio/mp4" />
+    </audio>
+    <button id="audio-toggle" aria-label="Toggle Background Music: Dr. Dre - Still D.R.E. ft. Snoop Dogg" title="Dr. Dre - Still D.R.E. ft. Snoop Dogg"
       class="fixed bottom-5 right-5 z-50 w-12 h-12 rounded-full bg-[#3A1538]/95 border border-gold-300/60 shadow-[0_4px_20px_rgba(25,5,30,0.65)] flex items-center justify-center gap-[3px] transition-transform active:scale-90 hover:scale-105">
       <span class="eq-1 w-[2.5px] h-[6px] bg-gold-200 rounded-full transition-all"></span>
       <span class="eq-2 w-[2.5px] h-[13px] bg-gold-200 rounded-full transition-all"></span>
@@ -2040,40 +2046,71 @@
   <!-- ===================================================== -->
   <script>
     /* -----------------------------------------------------------
-     * 1. WEB AUDIO API ROMANTIC AMBIENT WEDDING CHIME SYNTHESIZER
+     * 1. BACKGROUND MUSIC PLAYER: Dr. Dre - Still D.R.E. ft. Snoop Dogg
+     *    - Plays `audio/still-dre.m4a` (or custom track in bg-config.js)
+     *    - Includes Web Audio API Still D.R.E. staccato piano riff fallback
      * ----------------------------------------------------------- */
     let audioCtx = null;
     let isPlaying = false;
     let melodyInterval = null;
     const audioToggleBtn = document.getElementById('audio-toggle');
+    const bgMusicPlayer = document.getElementById('bg-music-player');
 
-    function playWarmNote(freq, duration = 2.6, delay = 0) {
-      if (!audioCtx || !isPlaying) return;
-      const now = audioCtx.currentTime + delay;
-      const osc = audioCtx.createOscillator();
-      const subOsc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
-
-      osc.type = 'sine';
-      subOsc.type = 'triangle';
-      osc.frequency.setValueAtTime(freq, now);
-      subOsc.frequency.setValueAtTime(freq / 2, now);
-
-      gain.gain.setValueAtTime(0.0001, now);
-      gain.gain.exponentialRampToValueAtTime(0.045, now + 0.35);
-      gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
-
-      osc.connect(gain);
-      subOsc.connect(gain);
-      gain.connect(audioCtx.destination);
-
-      osc.start(now);
-      subOsc.start(now);
-      osc.stop(now + duration + 0.1);
-      subOsc.stop(now + duration + 0.1);
+    // Apply custom track configuration from bg-config.js if changed
+    if (bgMusicPlayer && window.BACKGROUND_MUSIC_CONFIG) {
+      bgMusicPlayer.volume = typeof window.BACKGROUND_MUSIC_CONFIG.volume === 'number'
+        ? window.BACKGROUND_MUSIC_CONFIG.volume
+        : 0.78;
+      if (window.BACKGROUND_MUSIC_CONFIG.src && window.BACKGROUND_MUSIC_CONFIG.src !== 'audio/still-dre.m4a') {
+        bgMusicPlayer.src = window.BACKGROUND_MUSIC_CONFIG.src;
+      }
     }
 
-    function startAmbientMusic() {
+    // Fallback Web Audio API synthesizer playing the iconic Still D.R.E. staccato piano riff (93 BPM)
+    function playStillDreChord(notes, bassFreq, delay = 0) {
+      if (!audioCtx || !isPlaying) return;
+      const now = audioCtx.currentTime + delay;
+
+      notes.forEach((freq) => {
+        const osc = audioCtx.createOscillator();
+        const overtone = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+
+        osc.type = 'triangle';
+        overtone.type = 'sawtooth';
+        osc.frequency.setValueAtTime(freq, now);
+        overtone.frequency.setValueAtTime(freq * 2, now);
+
+        gain.gain.setValueAtTime(0.0001, now);
+        gain.gain.linearRampToValueAtTime(0.055, now + 0.012);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.24);
+
+        osc.connect(gain);
+        overtone.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start(now);
+        overtone.start(now);
+        osc.stop(now + 0.26);
+        overtone.stop(now + 0.26);
+      });
+
+      if (bassFreq) {
+        const bassOsc = audioCtx.createOscillator();
+        const bassGain = audioCtx.createGain();
+        bassOsc.type = 'sine';
+        bassOsc.frequency.setValueAtTime(bassFreq, now);
+        bassGain.gain.setValueAtTime(0.0001, now);
+        bassGain.gain.linearRampToValueAtTime(0.11, now + 0.02);
+        bassGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.55);
+        bassOsc.connect(bassGain);
+        bassGain.connect(audioCtx.destination);
+        bassOsc.start(now);
+        bassOsc.stop(now + 0.58);
+      }
+    }
+
+    function startStillDreSynthFallback() {
       if (!audioCtx) {
         const AudioContext = window.AudioContext || window.webkitAudioContext;
         audioCtx = new AudioContext();
@@ -2081,34 +2118,55 @@
       if (audioCtx.state === 'suspended') {
         audioCtx.resume();
       }
+      if (melodyInterval) clearInterval(melodyInterval);
+
+      // Iconic Still D.R.E. 16-eighth-note piano pattern at 93 BPM (eighth note = 0.322s):
+      // 8x [C6, E6, A6] -> 3x [B5, E6, A6] -> 5x [B5, E6, G6]
+      const c1 = [1046.50, 1318.51, 1760.00]; // C6 - E6 - A6
+      const c2 = [987.77, 1318.51, 1760.00];  // B5 - E6 - A6
+      const c3 = [987.77, 1318.51, 1567.98];  // B5 - E6 - G6
+      const eighth = 0.3225;
+
+      const triggerRiff = () => {
+        if (!isPlaying) return;
+        for (let i = 0; i < 16; i++) {
+          const chord = i < 8 ? c1 : (i < 11 ? c2 : c3);
+          const bass = i === 0 ? 110.00 : (i === 8 ? 123.47 : (i === 11 ? 82.41 : null));
+          playStillDreChord(chord, bass, i * eighth);
+        }
+      };
+
+      triggerRiff();
+      melodyInterval = setInterval(triggerRiff, Math.round(16 * eighth * 1000));
+    }
+
+    function startAmbientMusic() {
       isPlaying = true;
       audioToggleBtn.classList.add('playing');
 
-      const chords = [
-        [349.23, 440.00, 523.25, 659.25],
-        [293.66, 440.00, 523.25, 587.33],
-        [261.63, 392.00, 523.25, 659.25],
-        [233.08, 349.23, 440.00, 587.33]
-      ];
-      let step = 0;
-
-      const triggerBar = () => {
-        if (!isPlaying) return;
-        const chord = chords[step % chords.length];
-        chord.forEach((note, idx) => {
-          playWarmNote(note, 2.8, idx * 0.45);
-        });
-        step++;
-      };
-
-      triggerBar();
-      melodyInterval = setInterval(triggerBar, 2400);
+      if (bgMusicPlayer) {
+        const playPromise = bgMusicPlayer.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {
+            // Fallback to Still D.R.E. Web Audio synth if audio file fails
+            startStillDreSynthFallback();
+          });
+          return;
+        }
+      }
+      startStillDreSynthFallback();
     }
 
     function stopAmbientMusic() {
       isPlaying = false;
       audioToggleBtn.classList.remove('playing');
-      if (melodyInterval) clearInterval(melodyInterval);
+      if (bgMusicPlayer) {
+        bgMusicPlayer.pause();
+      }
+      if (melodyInterval) {
+        clearInterval(melodyInterval);
+        melodyInterval = null;
+      }
     }
 
     audioToggleBtn.addEventListener('click', () => {
