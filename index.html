@@ -116,15 +116,15 @@
     .delay-400 { transition-delay: 0.55s; }
     .delay-500 { transition-delay: 0.7s; }
 
-    /* Calligraphy Reveal Animation on Cover */
+    /* Calligraphy Reveal Animation on Cover (extra negative inset prevents cursive swashes on "Romel" & "Akshaya" from clipping) */
     @keyframes writeReveal {
       0% {
-        clip-path: inset(0 100% 0 0);
+        clip-path: inset(-25% 108% -25% -25%);
         opacity: 0.2;
         filter: blur(4px);
       }
       100% {
-        clip-path: inset(0 0% 0 0);
+        clip-path: inset(-25% -25% -25% -25%);
         opacity: 1;
         filter: blur(0px);
       }
@@ -132,15 +132,15 @@
 
     .animate-calligraphy-1 {
       animation: writeReveal 1.8s cubic-bezier(0.25, 1, 0.5, 1) 0.5s forwards;
-      clip-path: inset(0 100% 0 0);
+      clip-path: inset(-25% 108% -25% -25%);
     }
     .animate-calligraphy-2 {
       animation: writeReveal 1.2s cubic-bezier(0.25, 1, 0.5, 1) 1.5s forwards;
-      clip-path: inset(0 100% 0 0);
+      clip-path: inset(-25% 108% -25% -25%);
     }
     .animate-calligraphy-3 {
       animation: writeReveal 1.8s cubic-bezier(0.25, 1, 0.5, 1) 2.0s forwards;
-      clip-path: inset(0 100% 0 0);
+      clip-path: inset(-25% 108% -25% -25%);
     }
 
     /* Gold Metallic Button & Gradient Styles */
@@ -549,8 +549,10 @@
 
     <!-- 1. BACKGROUND MUSIC PLAYER (Dr. Dre - Still D.R.E. ft. Snoop Dogg) & FLOATING TOGGLE BUTTON -->
     <audio id="bg-music-player" loop preload="auto">
+      <source src="still-dre.m4a" type="audio/mp4" />
       <source src="audio/still-dre.m4a" type="audio/mp4" />
       <source src="audio/still-dre.mp3" type="audio/mpeg" />
+      <source src="still-dre-instrumental.m4a" type="audio/mp4" />
       <source src="audio/still-dre-instrumental.m4a" type="audio/mp4" />
       <source src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/00/b8/01/00b801d0-ca58-5b96-a07c-4933b6784ca6/mzaf_17927713563224179032.plus.aac.p.m4a" type="audio/mp4" />
     </audio>
@@ -647,14 +649,14 @@
         </div>
 
         <!-- Animated Calligraphy Names -->
-        <div class="my-4 py-2 flex flex-col items-center justify-center">
-          <h1 class="font-calligraphy text-[56px] leading-[1.05] text-[#4B1B56] animate-calligraphy-1 drop-shadow-sm">
+        <div class="my-4 py-2 flex flex-col items-center justify-center w-full overflow-visible">
+          <h1 class="font-calligraphy text-[56px] leading-[1.22] px-7 py-1.5 -my-1 text-[#4B1B56] animate-calligraphy-1 drop-shadow-sm overflow-visible">
             Akshaya
           </h1>
-          <span class="font-serif italic text-2xl text-[#B98F36] my-1 animate-calligraphy-2">
+          <span class="font-serif italic text-2xl text-[#B98F36] my-1 px-3 animate-calligraphy-2">
             &amp;
           </span>
-          <h1 class="font-calligraphy text-[56px] leading-[1.05] text-[#4B1B56] animate-calligraphy-3 drop-shadow-sm">
+          <h1 class="font-calligraphy text-[56px] leading-[1.22] px-7 py-1.5 -my-1 text-[#4B1B56] animate-calligraphy-3 drop-shadow-sm overflow-visible">
             Romel
           </h1>
         </div>
@@ -795,35 +797,39 @@
         </div>
 
         <!-- Bride & Groom Cathedral Steps Portrait Art + Floral Urns -->
-        <div class="relative z-10 w-full mt-4 flex flex-col items-center">
-          <!-- Side Floral Urns on Pedestals -->
-          <div class="w-full relative flex justify-center items-end min-h-[370px]">
+        <div class="relative z-10 w-full mt-2 flex flex-col items-center">
+          <!-- Side Floral Urns on Pedestals + Seamlessly Blended Couple Hands Illustration -->
+          <div class="w-full relative flex justify-center items-end min-h-[365px]">
 
-            <!-- Left Floral Pillar Arrangement (Real Illustrated Floral Bouquet on Pedestal) -->
-            <div class="absolute left-0 bottom-20 w-28 h-52 pointer-events-none opacity-95 flex flex-col items-center justify-end">
+            <!-- Detailed Bespoke Illustration of Groom & Bride (Feathered & Blended Edges) -->
+            <img src="images/02-hero-bg2.png?v=3"
+              onerror="this.onerror=null; this.src='images/02-hero-bg.jpg';"
+              alt="Akshaya &amp; Romel"
+              class="w-[385px] max-w-none h-[340px] mb-20 -mt-5 object-contain z-10 drop-shadow-[0_10px_18px_rgba(45,15,53,0.18)] reveal-blur delay-300 pointer-events-none select-none" />
+
+            <!-- Left Floral Pillar Arrangement (Real Illustrated Floral Bouquet on Pedestal - Frames Left Sleeve Edge) -->
+            <div class="absolute -left-1 bottom-20 w-32 h-56 pointer-events-none z-20 flex flex-col items-center justify-end">
               <img src="images/floral-bouquet-plum.png" alt=""
-                class="w-28 h-36 -mb-5 object-contain z-10 drop-shadow-[0_6px_12px_rgba(45,15,53,0.22)] select-none" />
-              <svg viewBox="0 0 100 95" class="w-24 h-24 shrink-0">
+                class="w-32 h-40 -mb-6 object-contain z-20 drop-shadow-[0_6px_14px_rgba(45,15,53,0.24)] select-none" />
+              <img src="images/floral-spray-plum.png" alt=""
+                class="absolute bottom-14 -right-6 w-20 h-20 object-contain rotate-12 opacity-90 z-20 drop-shadow-sm select-none" />
+              <svg viewBox="0 0 100 95" class="w-24 h-24 shrink-0 relative z-10">
                 <rect x="24" y="10" width="44" height="85" fill="#F7EFE6" stroke="#D5B878" stroke-width="1.2"/>
                 <rect x="18" y="2" width="56" height="8" rx="2" fill="#E3C788"/>
               </svg>
             </div>
 
-            <!-- Right Floral Pillar Arrangement (Real Illustrated Floral Bouquet on Pedestal) -->
-            <div class="absolute right-0 bottom-20 w-28 h-52 pointer-events-none opacity-95 flex flex-col items-center justify-end">
+            <!-- Right Floral Pillar Arrangement (Real Illustrated Floral Bouquet on Pedestal - Frames Right Wrist Edge) -->
+            <div class="absolute -right-1 bottom-20 w-32 h-56 pointer-events-none z-20 flex flex-col items-center justify-end">
               <img src="images/floral-bouquet-plum.png" alt=""
-                class="w-28 h-36 -mb-5 object-contain -scale-x-100 z-10 drop-shadow-[0_6px_12px_rgba(45,15,53,0.22)] select-none" />
-              <svg viewBox="0 0 100 95" class="w-24 h-24 shrink-0">
+                class="w-32 h-40 -mb-6 object-contain -scale-x-100 z-20 drop-shadow-[0_6px_14px_rgba(45,15,53,0.24)] select-none" />
+              <img src="images/floral-spray-plum.png" alt=""
+                class="absolute bottom-14 -left-6 w-20 h-20 object-contain -scale-x-100 -rotate-12 opacity-90 z-20 drop-shadow-sm select-none" />
+              <svg viewBox="0 0 100 95" class="w-24 h-24 shrink-0 relative z-10">
                 <rect x="28" y="10" width="44" height="85" fill="#F7EFE6" stroke="#D5B878" stroke-width="1.2"/>
                 <rect x="22" y="2" width="56" height="8" rx="2" fill="#E3C788"/>
               </svg>
             </div>
-
-            <!-- Detailed Bespoke Illustration of Groom & Bride -->
-            <img src="images/02-hero-bg2.png"
-              onerror="this.onerror=null; this.src='images/02-hero-bg.jpg';"
-              alt="Akshaya &amp; Romel"
-              class="w-[300px] h-[375px] mb-16 -mt-12 object-contain z-10 drop-shadow-[0_14px_24px_rgba(45,15,53,0.3)] reveal-blur delay-300 pointer-events-none select-none" />
           </div>
 
           <!-- Bouncing Scroll Down Button -->
@@ -1213,7 +1219,6 @@
           class="absolute top-10 -right-3 w-40 h-64 object-contain object-right-top pointer-events-none opacity-92 drop-shadow-[0_6px_14px_rgba(74,63,55,0.18)] z-10 select-none" />
 
         <div class="relative z-10 max-w-[360px] mx-auto flex flex-col items-center">
-        
 
           <h2 class="mt-2 font-serif text-[44px] leading-[1.08] font-semibold text-[#4A3F37] reveal-blur delay-100">
             Wedding<br/>Ceremony
