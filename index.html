@@ -319,7 +319,7 @@
 <body class="antialiased selection:bg-plum-700 selection:text-gold-100">
 
   <!-- REUSABLE REALISTIC MULTI-LAYERED BOTANICAL FLOWER DEFINITIONS -->
-  <svg class="hidden w-0 h-0 absolute pointer-events-none" aria-hidden="true">
+  <svg style="position:absolute; width:0; height:0; overflow:hidden; pointer-events:none;" aria-hidden="true">
     <defs>
       <!-- Gradients for Realistic Botanical Flowers -->
       <radialGradient id="marigoldYellowGrad" cx="35%" cy="30%" r="70%">
@@ -887,18 +887,29 @@
 
           <!-- Bouncing Scroll Down Button -->
           <a href="#families-section" aria-label="Scroll to Our Families"
-            class="mt-1 w-9 h-9 rounded-full bg-[#4E2354]/90 text-gold-200 border border-gold-300/60 flex items-center justify-center shadow-lg animate-bounce">
+            class="mt-1 mb-6 w-9 h-9 rounded-full bg-[#4E2354]/90 text-gold-200 border border-gold-300/60 flex items-center justify-center shadow-lg animate-bounce relative z-20">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
             </svg>
           </a>
+        </div>
+
+        <!-- Organic Multi-Wave & Mist Blend into Our Families (#E6EBE2) -->
+        <div class="absolute -bottom-[2px] inset-x-0 h-24 pointer-events-none z-10 overflow-hidden">
+          <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(230,235,226,0) 0%, rgba(230,235,226,0.65) 55%, #E6EBE2 100%);"></div>
+          <svg class="w-full h-full" viewBox="0 0 460 96" preserveAspectRatio="none">
+            <path d="M0,38 C115,82 345,6 460,48 L460,96 L0,96 Z" fill="#E6EBE2" opacity="0.45"/>
+            <path d="M0,56 C140,18 320,86 460,44 L460,96 L0,96 Z" fill="#E6EBE2" opacity="0.75"/>
+            <path d="M0,68 C150,42 310,92 460,62 L460,96 L0,96 Z" fill="#E6EBE2"/>
+            <path d="M0,56 C140,18 320,86 460,44" stroke="#C59D48" stroke-width="1" stroke-opacity="0.4" fill="none"/>
+          </svg>
         </div>
       </section>
 
       <!-- =================================================== -->
       <!-- 4. SECTION 2: OUR FAMILIES                          -->
       <!-- =================================================== -->
-      <section id="families-section" class="relative py-20 px-6 text-center overflow-hidden"
+      <section id="families-section" class="relative pt-16 pb-24 px-6 text-center overflow-hidden"
         style="background: linear-gradient(180deg, #E6EBE2 0%, #FBF5EE 48%, #F6E2DF 100%);">
 
         <!-- Arched Gold Laurel Wreath Crown Divider -->
@@ -980,13 +991,24 @@
             </p>
           </div>
         </div>
+
+        <!-- Organic Multi-Wave & Mist Blend into Our Journey (#F6E2DF) -->
+        <div class="absolute -bottom-[2px] inset-x-0 h-24 pointer-events-none z-10 overflow-hidden">
+          <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(246,226,223,0) 0%, rgba(246,226,223,0.68) 55%, #F6E2DF 100%);"></div>
+          <svg class="w-full h-full" viewBox="0 0 460 96" preserveAspectRatio="none">
+            <path d="M0,44 C135,10 325,84 460,36 L460,96 L0,96 Z" fill="#F6E2DF" opacity="0.45"/>
+            <path d="M0,58 C120,88 340,22 460,54 L460,96 L0,96 Z" fill="#F6E2DF" opacity="0.75"/>
+            <path d="M0,70 C165,46 295,88 460,64 L460,96 L0,96 Z" fill="#F6E2DF"/>
+            <path d="M0,58 C120,88 340,22 460,54" stroke="#C59D48" stroke-width="1" stroke-opacity="0.38" fill="none"/>
+          </svg>
+        </div>
       </section>
 
       <!-- =================================================== -->
       <!-- 5. SECTION 3: OUR JOURNEY ("A STORY OF US" CAROUSEL)-->
       <!-- =================================================== -->
-      <section id="journey-section" class="relative pt-20 pb-14 px-5 text-center overflow-hidden"
-        style="background: linear-gradient(180deg, #F6E2DF 0%, #FDF6EC 45%, #F4D9E6 78%, #DFC2E8 100%);">
+      <section id="journey-section" class="relative pt-16 pb-20 px-5 text-center overflow-hidden"
+        style="background: linear-gradient(180deg, #F6E2DF 0%, #FDF6EC 42%, #F4D9E6 74%, #E6CBEB 100%);">
 
         <!-- Sunlit Gothic Window & Draped Voile Background -->
         <svg class="absolute top-6 left-1/2 -translate-x-1/2 w-[340px] h-[380px] opacity-40 pointer-events-none" viewBox="0 0 300 340" fill="none">
@@ -1102,12 +1124,26 @@
       <!-- =================================================================== -->
       <section id="haldi-sangeet-section" class="haldi-velvet-bg relative pt-36 pb-0 text-center text-[#F9EFFB] overflow-hidden select-none">
 
+        <!-- SEAMLESS ORGANIC MULTI-WAVE & FEATHERED MIST BLEND FROM JOURNEY SECTION (No Straight Line) -->
+        <div class="absolute -top-[2px] inset-x-0 h-36 pointer-events-none z-20 overflow-hidden">
+          <!-- Soft Feathered Gradient Mist melting #E6CBEB into Haldi Golden Glow -->
+          <div class="absolute inset-0"
+            style="background: linear-gradient(180deg, #E6CBEB 0%, rgba(230, 203, 235, 0.78) 22%, rgba(246, 185, 38, 0.28) 62%, rgba(0, 0, 0, 0) 100%);"></div>
+          <!-- 3-Layer Organic Scalloped Cloud/Wave Curves + Gold Filigree Arch -->
+          <svg class="w-full h-full" viewBox="0 0 460 144" preserveAspectRatio="none">
+            <path d="M0,0 L460,0 L460,68 C365,112 290,26 195,74 C105,118 45,48 0,82 Z" fill="#E6CBEB" opacity="0.42"/>
+            <path d="M0,0 L460,0 L460,48 C350,18 275,92 165,44 C85,12 35,64 0,46 Z" fill="#E6CBEB" opacity="0.76"/>
+            <path d="M0,0 L460,0 L460,26 C340,62 230,4 115,42 C55,60 22,28 0,32 Z" fill="#E6CBEB"/>
+            <path d="M0,52 C115,16 230,86 345,38 C395,18 430,36 460,50" stroke="#F6DF98" stroke-width="1.3" stroke-opacity="0.55" fill="none"/>
+          </svg>
+        </div>
+
         <!-- GSAP Scroll-Animated Color Shade Overlay (Yellow for Haldi -> Dark Blue for Sangeet, keeps bgImage intact) -->
         <div id="haldi-sangeet-tint" class="gsap-theme-tint absolute inset-0 pointer-events-none z-10"
           style="background: linear-gradient(180deg, rgba(246, 185, 38, 0.34) 0%, rgba(238, 130, 38, 0.24) 48%, rgba(10, 46, 110, 0.42) 100%);"></div>
 
         <!-- Realistic Yellow Marigold Garland Accents at Top for Haldi -->
-        <svg class="absolute top-3 inset-x-0 w-full h-28 pointer-events-none z-10 opacity-95" viewBox="0 0 460 110" fill="none">
+        <svg class="absolute top-10 inset-x-0 w-full h-28 pointer-events-none z-20 opacity-95" viewBox="0 0 460 110">
           <!-- Left Marigold Cluster -->
           <use href="#real-leaf-emerald" x="-8" y="22" width="46" height="46" transform="rotate(35 15 45)"/>
           <use href="#real-marigold-yellow" x="4" y="4" width="48" height="48"/>
@@ -1219,13 +1255,25 @@
         </div>
 
         <!-- Bottom Spacer to Showcase the Full Sangeet Moonlit Stage in 05-haldi-sangeet-bg.jpg -->
-        <div class="h-[240px] w-full pointer-events-none"></div>
+        <div class="h-[260px] w-full pointer-events-none"></div>
+
+        <!-- SEAMLESS ORGANIC MULTI-WAVE & FEATHERED MIST BLEND INTO WEDDING CEREMONY (#EAE1D3) -->
+        <div class="absolute -bottom-[2px] inset-x-0 h-32 pointer-events-none z-20 overflow-hidden">
+          <div class="absolute inset-0"
+            style="background: linear-gradient(180deg, rgba(234,225,211,0) 0%, rgba(234,225,211,0.52) 55%, #EAE1D3 100%);"></div>
+          <svg class="w-full h-full" viewBox="0 0 460 128" preserveAspectRatio="none">
+            <path d="M0,48 C120,104 335,14 460,64 L460,128 L0,128 Z" fill="#EAE1D3" opacity="0.42"/>
+            <path d="M0,74 C145,28 315,108 460,62 L460,128 L0,128 Z" fill="#EAE1D3" opacity="0.76"/>
+            <path d="M0,92 C160,64 300,114 460,84 L460,128 L0,128 Z" fill="#EAE1D3"/>
+            <path d="M0,74 C145,28 315,108 460,62" stroke="#D4AF37" stroke-width="1.2" stroke-opacity="0.5" fill="none"/>
+          </svg>
+        </div>
       </section>
 
       <!-- =================================================================== -->
       <!-- 7. SECTION 5: WEDDING CEREMONY (PASCAL: IVORY, SAGE & TAUPE)        -->
       <!-- =================================================================== -->
-      <section id="ceremony-section" class="relative pt-12 pb-12 px-5 text-center overflow-hidden"
+      <section id="ceremony-section" class="relative pt-14 pb-20 px-5 text-center overflow-hidden"
         style="background: linear-gradient(180deg, #EAE1D3 0%, #FAF5EC 45%, #D8E0D4 100%);">
 
         <!-- GSAP Pascal Color Shade Overlay (Ivory, Sage & Taupe) -->
@@ -1352,8 +1400,19 @@
       <!-- 8. SECTION 6: RECEPTION (BURGUNDY, RED & EMERALD FLOWERS)           -->
       <!-- Uses images/07-reception-bg.jpg                                     -->
       <!-- =================================================================== -->
-      <section id="reception-section" class="relative pt-24 pb-12 px-5 text-center overflow-hidden text-[#FAF2F5]"
+      <section id="reception-section" class="relative pt-28 pb-12 px-5 text-center overflow-hidden text-[#FAF2F5]"
         style="background: radial-gradient(circle at 50% 25%, #6B1331 0%, #420D2B 52%, #1E071B 100%);">
+
+        <!-- SEAMLESS ORGANIC MULTI-WAVE & FEATHERED MIST BLEND FROM CEREMONY (#D8E0D4) -->
+        <div class="absolute -top-[2px] inset-x-0 h-32 pointer-events-none z-10 overflow-hidden">
+          <div class="absolute inset-0"
+            style="background: linear-gradient(180deg, #D8E0D4 0%, rgba(216, 224, 212, 0.72) 22%, rgba(107, 19, 49, 0.35) 64%, rgba(0, 0, 0, 0) 100%);"></div>
+          <svg class="w-full h-full" viewBox="0 0 460 128" preserveAspectRatio="none">
+            <path d="M0,0 L460,0 L460,64 C370,104 285,22 190,68 C100,108 42,42 0,72 Z" fill="#D8E0D4" opacity="0.45"/>
+            <path d="M0,0 L460,0 L460,44 C345,16 265,82 160,38 C80,10 35,54 0,40 Z" fill="#D8E0D4" opacity="0.78"/>
+            <path d="M0,0 L460,0 L460,24 C330,54 225,6 110,36 C50,52 20,24 0,28 Z" fill="#D8E0D4"/>
+          </svg>
+        </div>
 
         <!-- GSAP Burgundy, Ruby Red & Emerald Shade Overlay (Keeps 07-reception-bg.jpg visible underneath) -->
         <div id="reception-tint" class="gsap-theme-tint absolute inset-0 pointer-events-none z-0"
@@ -1364,7 +1423,7 @@
         </div>
 
         <!-- Top Arch with Realistic Burgundy & Ruby Red Roses and Emerald Foliage -->
-        <div class="absolute top-0 inset-x-0 h-56 pointer-events-none overflow-hidden z-10">
+        <div class="absolute top-3 inset-x-0 h-56 pointer-events-none overflow-hidden z-20">
           <svg class="w-full h-full" viewBox="0 0 460 220" preserveAspectRatio="none">
             <path d="M0,130 C75,25 160,5 230,5 C300,5 385,25 460,130" stroke="#C8A86B" stroke-width="3.2" fill="none"/>
             <!-- Left Burgundy, Red & Emerald Floral Cluster -->
@@ -1394,8 +1453,8 @@
         </div>
 
         <!-- Left-Side Realistic Burgundy & Red Roses, Emerald Leaves & Glowing Pillar Candles -->
-        <svg class="absolute -left-2 bottom-16 w-28 h-64 pointer-events-none opacity-95 drop-shadow-[0_6px_16px_rgba(0,0,0,0.6)] z-10" viewBox="0 0 115 260" fill="none">
-          <path d="M8,20 Q42,60 22,125 Q48,175 18,235" stroke="#007D4B" stroke-width="2.8"/>
+        <svg class="absolute -left-2 bottom-24 w-28 h-64 pointer-events-none opacity-95 drop-shadow-[0_6px_16px_rgba(0,0,0,0.6)] z-20" viewBox="0 0 115 260">
+          <path d="M8,20 Q42,60 22,125 Q48,175 18,235" stroke="#007D4B" stroke-width="2.8" fill="none"/>
           <use href="#real-leaf-emerald" x="14" y="18" width="48" height="48" transform="rotate(-24 38 42)"/>
           <use href="#real-leaf-emerald" x="18" y="92" width="48" height="48" transform="rotate(22 42 116)"/>
           <use href="#real-leaf-emerald" x="6" y="138" width="46" height="46" transform="rotate(-18 29 161)"/>
@@ -1468,7 +1527,19 @@
           </div>
 
           <!-- Bottom Spacer so images/07-reception-bg.jpg Garden Stage & Tables Show Clearly -->
-          <div class="mt-8 h-[230px] w-full pointer-events-none"></div>
+          <div class="mt-8 h-[250px] w-full pointer-events-none"></div>
+        </div>
+
+        <!-- SEAMLESS ORGANIC MULTI-WAVE & FEATHERED MIST BLEND INTO VENUE (#F4DFE0) -->
+        <div class="absolute -bottom-[2px] inset-x-0 h-32 pointer-events-none z-20 overflow-hidden">
+          <div class="absolute inset-0"
+            style="background: linear-gradient(180deg, rgba(244,223,224,0) 0%, rgba(244,223,224,0.52) 55%, #F4DFE0 100%);"></div>
+          <svg class="w-full h-full" viewBox="0 0 460 128" preserveAspectRatio="none">
+            <path d="M0,52 C125,102 335,18 460,66 L460,128 L0,128 Z" fill="#F4DFE0" opacity="0.44"/>
+            <path d="M0,76 C145,32 315,106 460,64 L460,128 L0,128 Z" fill="#F4DFE0" opacity="0.78"/>
+            <path d="M0,94 C160,68 300,114 460,86 L460,128 L0,128 Z" fill="#F4DFE0"/>
+            <path d="M0,76 C145,32 315,106 460,64" stroke="#C8A86B" stroke-width="1.2" stroke-opacity="0.55" fill="none"/>
+          </svg>
         </div>
       </section>
 
@@ -1479,19 +1550,29 @@
       <section id="venue-section" class="relative pt-28 pb-0 px-5 text-center overflow-hidden"
         style="background: linear-gradient(180deg, #F4DFE0 0%, #F7EFE6 55%, #E6EBE2 100%);">
 
+        <!-- SEAMLESS TOP FEATHERED MIST & ORGANIC WAVE SO 08-venue-bg.jpg HAS NO STRAIGHT TOP LINE -->
+        <div class="absolute -top-[2px] inset-x-0 h-28 pointer-events-none z-10 overflow-hidden">
+          <div class="absolute inset-0"
+            style="background: linear-gradient(180deg, #F4DFE0 0%, rgba(244, 223, 224, 0.72) 32%, rgba(244, 223, 224, 0) 100%);"></div>
+          <svg class="w-full h-full" viewBox="0 0 460 112" preserveAspectRatio="none">
+            <path d="M0,0 L460,0 L460,48 C355,84 265,16 165,52 C85,80 35,34 0,54 Z" fill="#F4DFE0" opacity="0.55"/>
+            <path d="M0,0 L460,0 L460,26 C335,54 225,8 115,34 C55,48 20,22 0,26 Z" fill="#F4DFE0"/>
+          </svg>
+        </div>
+
         <!-- Realistic Pascal Floral Corner Accents -->
-        <svg class="absolute top-4 left-2 w-24 h-24 pointer-events-none opacity-90 z-10" viewBox="0 0 100 100">
+        <svg class="absolute top-6 left-2 w-24 h-24 pointer-events-none opacity-90 z-20" viewBox="0 0 100 100">
           <use href="#real-leaf-sage" x="18" y="18" width="44" height="44" transform="rotate(25 40 40)"/>
           <use href="#real-rose-ivory" x="4" y="6" width="48" height="48"/>
           <use href="#real-rose-sage" x="34" y="2" width="40" height="40"/>
         </svg>
-        <svg class="absolute top-4 right-2 w-24 h-24 pointer-events-none opacity-90 z-10" viewBox="0 0 100 100">
+        <svg class="absolute top-6 right-2 w-24 h-24 pointer-events-none opacity-90 z-20" viewBox="0 0 100 100">
           <use href="#real-leaf-sage" x="38" y="18" width="44" height="44" transform="rotate(-25 60 40)"/>
           <use href="#real-rose-ivory" x="48" y="6" width="48" height="48"/>
           <use href="#real-rose-taupe" x="26" y="2" width="40" height="40"/>
         </svg>
 
-        <div class="relative z-10 max-w-[360px] mx-auto flex flex-col items-center">
+        <div class="relative z-20 max-w-[360px] mx-auto flex flex-col items-center">
           <p class="font-sans text-[10px] tracking-[0.28em] text-[#7A4E5D] uppercase font-medium reveal-blur">
             WHERE WE GATHER
           </p>
@@ -1531,13 +1612,25 @@
         </div>
 
         <!-- Bottom Spacer to Showcase the Full Aisle Artwork in 08-venue-bg.jpg -->
-        <div class="mt-8 h-[340px] w-full pointer-events-none"></div>
+        <div class="mt-8 h-[350px] w-full pointer-events-none"></div>
+
+        <!-- SEAMLESS ORGANIC MULTI-WAVE & FEATHERED MIST BLEND INTO RSVP (#E6EBE2) -->
+        <div class="absolute -bottom-[2px] inset-x-0 h-32 pointer-events-none z-20 overflow-hidden">
+          <div class="absolute inset-0"
+            style="background: linear-gradient(180deg, rgba(230,235,226,0) 0%, rgba(230,235,226,0.58) 55%, #E6EBE2 100%);"></div>
+          <svg class="w-full h-full" viewBox="0 0 460 128" preserveAspectRatio="none">
+            <path d="M0,50 C130,104 330,18 460,64 L460,128 L0,128 Z" fill="#E6EBE2" opacity="0.45"/>
+            <path d="M0,74 C145,28 315,108 460,62 L460,128 L0,128 Z" fill="#E6EBE2" opacity="0.78"/>
+            <path d="M0,92 C160,66 300,114 460,86 L460,128 L0,128 Z" fill="#E6EBE2"/>
+            <path d="M0,74 C145,28 315,108 460,62" stroke="#C59D48" stroke-width="1.1" stroke-opacity="0.45" fill="none"/>
+          </svg>
+        </div>
       </section>
 
       <!-- =================================================== -->
       <!-- 10. SECTION 8: INTERACTIVE RSVP FORM                -->
       <!-- =================================================== -->
-      <section id="rsvp-section" class="relative py-20 px-5 text-center overflow-hidden"
+      <section id="rsvp-section" class="relative pt-20 pb-24 px-5 text-center overflow-hidden"
         style="background: linear-gradient(180deg, #E6EBE2 0%, #FBF5EE 50%, #F6E2DF 100%);">
 
         <!-- Ornate SVG Botanical Arch & Filigree Frame Matching the Whole Invitation -->
@@ -1765,6 +1858,17 @@
               </defs>
             </svg>
           </div>
+        </div>
+
+        <!-- Organic Multi-Wave & Mist Blend into Thank You Section (#F6E2DF) -->
+        <div class="absolute -bottom-[2px] inset-x-0 h-24 pointer-events-none z-10 overflow-hidden">
+          <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(246,226,223,0) 0%, rgba(246,226,223,0.68) 55%, #F6E2DF 100%);"></div>
+          <svg class="w-full h-full" viewBox="0 0 460 96" preserveAspectRatio="none">
+            <path d="M0,42 C130,84 330,14 460,52 L460,96 L0,96 Z" fill="#F6E2DF" opacity="0.45"/>
+            <path d="M0,58 C145,22 315,86 460,50 L460,96 L0,96 Z" fill="#F6E2DF" opacity="0.78"/>
+            <path d="M0,72 C160,48 300,88 460,66 L460,96 L0,96 Z" fill="#F6E2DF"/>
+            <path d="M0,58 C145,22 315,86 460,50" stroke="#C59D48" stroke-width="1" stroke-opacity="0.4" fill="none"/>
+          </svg>
         </div>
       </section>
 
