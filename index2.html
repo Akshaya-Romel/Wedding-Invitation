@@ -1278,17 +1278,18 @@
 
         <!-- GSAP Pascal Color Shade Overlay (Ivory, Sage & Taupe) -->
         <div id="ceremony-tint" class="gsap-theme-tint absolute inset-0 pointer-events-none z-0"
-          style="background: linear-gradient(180deg, rgba(250,245,236,0.38) 0%, rgba(158,170,152,0.28) 52%, rgba(185,174,163,0.36) 100%);"></div>
+          style="background: linear-gradient(180deg, rgba(250,245,236,0) 0%, rgba(158,170,152,0.24) 50%, rgba(216,224,212,0) 100%);"></div>
 
         <!-- Cathedral Arch Frame -->
         <svg class="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 460 820" preserveAspectRatio="none" fill="none">
           <path d="M18,820 L18,190 C50,70 145,15 230,8 C315,15 410,70 442,190 L442,820" stroke="url(#ceremonyArch)" stroke-width="4"/>
           <path d="M28,820 L28,195 C58,82 150,26 230,18 C310,26 402,82 432,195 L432,820" stroke="url(#ceremonyArch)" stroke-width="1.4" opacity="0.75"/>
           <defs>
-            <linearGradient id="ceremonyArch" x1="0" y1="0" x2="460" y2="800" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#9EAA98"/>
-              <stop offset="50%" stop-color="#D4AF37"/>
-              <stop offset="100%" stop-color="#B9AEA3"/>
+            <linearGradient id="ceremonyArch" x1="0" y1="0" x2="0" y2="820" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#9EAA98" stop-opacity="0.2"/>
+              <stop offset="45%" stop-color="#D4AF37" stop-opacity="0.95"/>
+              <stop offset="85%" stop-color="#B9AEA3" stop-opacity="0.65"/>
+              <stop offset="100%" stop-color="#D8E0D4" stop-opacity="0"/>
             </linearGradient>
           </defs>
         </svg>
