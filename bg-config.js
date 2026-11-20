@@ -88,7 +88,7 @@ window.PAGE_BACKGROUNDS_CONFIG = {
   },
   venueSection: {
     elementId: "venue-section",
-    bgImage: "images/08-venue-bg.jpg",
+    bgImage: "images/08-venue-bg.jpg?v=2",
     bgSize: "cover",
     bgPosition: "center bottom",
     overlayGradient: "linear-gradient(180deg, rgba(244,223,224,0.18) 0%, rgba(230,235,226,0.12) 100%)"

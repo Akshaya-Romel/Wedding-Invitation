@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <!-- External Background Configuration File (Create `bg-config.js` in the same folder to override any page backgrounds) -->
-  <script src="bg-config.js" onerror="console.info('Optional bg-config.js not found; using built-in PAGE_BACKGROUNDS_CONFIG defaults.')"></script>
+  <script src="bg-config.js?v=2" onerror="console.info('Optional bg-config.js not found; using built-in PAGE_BACKGROUNDS_CONFIG defaults.')"></script>
 
   <!-- GSAP & ScrollTrigger for Scroll-Driven Color & Pop-Up Animations -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -1889,8 +1889,8 @@
       },
       venueSection: {
         elementId: "venue-section",
-        bgImage: "images/08-venue-bg.jpg",
-        fallbackCandidates: ["images/08-venue-bg.jpg", "images/08-venue-bg.png", "images/venue-bg.jpg"],
+        bgImage: "images/08-venue-bg.jpg?v=2",
+        fallbackCandidates: ["images/08-venue-bg.jpg?v=2", "images/08-venue-bg.png", "images/venue-bg.jpg"],
         bgSize: "cover",
         bgPosition: "center bottom",
         overlayGradient: "linear-gradient(180deg, rgba(244,223,224,0.18) 0%, rgba(230,235,226,0.12) 100%)"
